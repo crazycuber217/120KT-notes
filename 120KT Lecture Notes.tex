@@ -1,0 +1,185 @@
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+\usepackage{tikz-cd}
+\usepackage{multirow}
+\usepackage{epsf}
+\usepackage{tikz}
+\usepackage{cancel}
+\usepackage{hyperref}
+\usepackage{marvosym}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{mathtools, amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{comment}
+\usepackage{textgreek}
+%\usepackage{evan}
+\theoremstyle{definition}
+
+
+\newtheorem*{theorem*}{Theorem}
+
+%% this allows for theorems which are not automatically numbered
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{example}[thm]{Example}
+\newtheorem{fact}{Fact}
+\newtheorem{corollary}[thm]{Corollary}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem*{exercise}{Exercise}
+\newtheorem*{motivation}{Motivation}
+\newtheorem*{observation}{Observation}
+\newtheorem*{problem}{Problem}
+\newtheorem*{conjecture}{Conjecture}
+\newtheorem*{notation}{Notation}
+\newtheorem*{digression}{Digression}
+
+
+%% Bunch of macros
+
+%General
+\newcommand{\bb}[1]{\mathbb{#1}}
+\renewcommand{\cal}[1]{\mathcal{#1}}
+\newcommand{\cyc}[1]{\mathbb{Z}/#1\mathbb{Z}}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\diff}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand{\pdiff}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\Int}[4]{\int\limits_{#1}^{#2}#3 \expandafter\ifx\expandafter\relax
+  \detokenize{#4}\relax\else\textnormal{d#4}\fi} %if the argument for variable that we're integrating wrt is empty, this makes it so that there's no `d'
+\renewcommand{\l}[1]{\left#1}
+\renewcommand{\r}{\right}
+\DeclareMathOperator{\img}{Image}
+\DeclareMathOperator{\Frac}{Frac}
+\newcommand{\pre}[1]{#1^{\textrm{pre}}}
+\newcommand{\ovl}[1]{\overline{#1}}
+
+%Algebra & Category Theory
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\chara}{char}
+\DeclareMathOperator{\aut}{Aut}
+\DeclareMathOperator{\inn}{Inn}
+\DeclareMathOperator{\out}{Out}
+\DeclareMathOperator{\stab}{Stab}
+\newcommand{\gl}[2]{\text{GL}(#1, \mathbb{#2})}
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\ann}{Ann}
+\DeclareMathOperator{\cl}{Cl}
+
+%Analysis
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\re}{Re}
+\newcommand{\Oint}[4]{\oint\limits_{#1}^{#2}#3 \expandafter\ifx\expandafter\relax
+  \detokenize{#4}\relax\else\textnormal{d#4}\fi} %if the argument for variable that we're integrating wrt is empty, this makes it so that there's no `d'
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+
+%Geometry/Topology
+%\renewcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\DeclareMathOperator{\In}{int}
+\DeclareMathOperator{\conv}{conv}
+
+
+
+%document format
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+\usepackage[left=2cm, right=2cm, top=1cm, bottom=2cm]{geometry}
+
+\title{120KT Lecture Notes}
+\author{moksh}
+\begin{document}
+\maketitle
+\chapter{notes}
+\section{Class 1}
+\begin{defn}[Manifold]
+A manifold of dimension $n$, or $n$-manifold is a 2nd countable Hausdorff topological space, $\cal{M}$, for which there exists a family $\{(V_{\lambda}, \phi_{\lambda})\}_{\lambda \in \lambda}$ such that $\{U_{\lambda}\}_{\lambda \in \Lambda} \subseteq \cal{T}_{\cal{M}}$, $\bigcup_{\lambda \in \Lambda} U_{\lambda} = \cal{M}$, and that each $\phi_{\lambda}$ is a homeomorphism between $U_{\lambda}$ and some open subset of $\bb{R}^n$.
+\end{defn}
+
+\begin{defn}[Coordinate chart]
+Each $(U_{\lambda}, \phi_{\lambda})$ is called a coordinate chart of $\cal{M}$. 
+The set of all coordinate charts is called an \emph{atlas} of $\cal{M}$.
+\end{defn}
+
+\begin{defn}[Transition map]
+Let $(U_\lambda, \phi_\lambda)$
+Let 
+\end{defn}
+
+\begin{example}
+\end{example}
+
+Stereographic projection.
+\begin{defn}[Product Manifold]
+Let $(\cal{M}, \{U_\lambda, \phi_\lambda\}_{\Lambda}) and (\cal{M}, \{U_\lambda, \phi_\lambda\}_{\Lambda})$ be $m$ and $n$ dimensional manifolds. 
+Then, their product structure defines a manifold.
+\end{defn}
+
+\begin{exercise}
+Prove this.
+\end{exercise}
+
+Then, we define the $n$-dimensional torus, denoted by $T^n$, as $\underbrace{S^1 \times S^1 \times  \dots \times S^1}_{n \text{ times}} = T^n$.
+
+Check that $\bb{RP}^n$ is a manifold.
+\begin{defn}[Sub-manifold]
+Let $\cal{M}$ be an $n$-manifold, and let $\cal{K} \subseteq \cal{M}$, and let $k \leq n$.
+
+We say $\cal{K}$ is a $k$-dimensional submanifold of $\cal{M}$ if .
+\end{defn}
+
+We define the codimension of a submanifold, $\cal{K}$, of a manifold $\cal{M}$ as $n-k$. 
+\begin{example}
+$S^n$ is a codimension $1$ submanifold of $\bb{R}^{n+1}$.
+\end{example}
+
+\begin{defn}[Manifolds with boundary]
+A manifold where for some indices in $\Lambda' \subseteq \Lambda$, $\phi_{\lambda'}$ is a homeomorphism between $U_{\lambda'}$ and the upper half space, which is the subset of $\bb{R}^n$ with first coordinate nonnegative.
+\end{defn}
+
+Define Boundary, Interior
+
+Mention the result she mentioned that boundary, interior are invariant regardless of coordinate chart chosen.
+Closed manifold Compact manifold, Open manifold, Simply Connected, Path connected, etc etc
+
+\begin{defn}[Orientability]
+A manifold is orientable iff $H_n(\cal{M}, \bb{Z}) \cong \bb{Z}$
+\end{defn}
+
+
+A manifold is orientable iff there can be defined a continuous normal vector field on it. 
+
+An orientation is just a choice of generators.
+
+orientable if n is odd
+$2$-manifolds are called surfaces.
+
+$\sigma_{g, b}$ are orientable surfaces of genus $g$, and \# int $D^2$ removed is $b$. 
+
+$\sigma_{0, 0}: S^2$.
+$\sigma_{0, 1}: D^2$.
+$\sigma_{0, 2}$: Annulus
+$\sigma_{0, 3} S^2$: Pair of pants
+$\sigma_{1, 0} T^2$.
+
+Such manifolds are always compact, and have boundary for $g>0$.
+
+\begin{defn}[Embedding]
+Let $\cal{M}$, $\cal{N}$ be manifolds with $\dim(\cal{M}) \leq \dim(\cal{M})$. We say that $\cal{M}$ is embedded in $\cal{N}$ iff it is homeomorphic to some sub-manifold of $\cal{N}$, by some map $f$.
+Clearly $f$ is injective, and we denote it by $f: \cal{M} \hookrightarrow \cal{N}$.
+\end{defn}
+
+Knot theory is the study of embeddings of $S^p$ in $S^n$ or $\bb{R}^n$, with $p< n$.
+\end{document}
