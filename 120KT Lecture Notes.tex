@@ -88,7 +88,7 @@
 
 %Geometry/Topology
 %\renewcommand{\norm}[1]{\left\lVert#1\right\rVert}
-\DeclareMathOperator{\In}{int}
+\DeclareMathOperator{\In}{Int}
 \DeclareMathOperator{\conv}{conv}
 
 
@@ -114,65 +114,111 @@ The set of all coordinate charts is called an \emph{atlas} of $\cal{M}$.
 \end{defn}
 
 \begin{defn}[Transition map]
-Let $(U_\lambda, \phi_\lambda)$
-Let 
+Let $(U_\alpha, \phi_\alpha), (U_\beta, \phi_\beta), \{\alpha, \beta\}\subseteq \Lambda$ be coordinate charts with $U_{\alpha} \cap U_{\beta} \neq \emptyset$.
+ 
+Then we define the transition map $\tau_{\alpha, \beta}: \phi_{\alpha}(U_{\alpha} \cap U_{\beta}) \to \phi_{\beta}(U_{\alpha} \cap U_{\beta})$ as $\phi_{\beta} \circ \phi_{\alpha}^{-1}$.
 \end{defn}
+Clearly, $\tau_{\alpha, \beta}$ is a homeomorphism.
 
-\begin{example}
+In the context of manifolds, equivalence is considered up to homeomorphism.
+
+
+\begin{example}[Examples of manifolds]
+Some examples:
+
+\begin{enumerate}
+\item $\bb{R}^n$ is an $n$-manifold.
+\item Any open subset of $\bb{R}^n$ is an $n$-manifold.
+\item $S^n = \{x \in \bb{R}^{n+1} : \norm{x} = 1\}$ is an $n$-manifold 
+\item $\bb{RP}^n$ is an $n$-manifold, where $\bb{RP}^n$ is the quotient space obtained by identifying antipodal points on $\bb{S}^n$.
+\end{enumerate}
 \end{example}
 
-Stereographic projection.
+\begin{exercise}
+Prove that $S^n$ is an $n$-manifold.
+\end{exercise}
+\begin{proof}
+\ref{snmanifold}
+\end{proof}
+
+\begin{exercise}
+Prove that $\bb{RP}^n$ is an $n$-manifold.
+\end{exercise}
+\begin{proof}
+\ref{rpnmanifold}
+\end{proof}
 \begin{defn}[Product Manifold]
-Let $(\cal{M}, \{U_\lambda, \phi_\lambda\}_{\Lambda}) and (\cal{M}, \{U_\lambda, \phi_\lambda\}_{\Lambda})$ be $m$ and $n$ dimensional manifolds. 
+Let $(\cal{M}, \{U_\lambda, \phi_\lambda\}_{\Lambda})$ and $(\cal{M}, \{U_\gamma, \phi_\gamma\}_{\Gamma})$ be $m$ and $n$ dimensional manifolds. 
 Then, their product structure defines a manifold.
 \end{defn}
 
 \begin{exercise}
 Prove this.
+
+\begin{proof}
+\ref{productmanifold}
+\end{proof}
 \end{exercise}
 
 Then, we define the $n$-dimensional torus, denoted by $T^n$, as $\underbrace{S^1 \times S^1 \times  \dots \times S^1}_{n \text{ times}} = T^n$.
 
-Check that $\bb{RP}^n$ is a manifold.
 \begin{defn}[Sub-manifold]
 Let $\cal{M}$ be an $n$-manifold, and let $\cal{K} \subseteq \cal{M}$, and let $k \leq n$.
 
-We say $\cal{K}$ is a $k$-dimensional submanifold of $\cal{M}$ if .
+We say $\cal{K}$ is a $k$-dimensional submanifold of $\cal{M}$, if $\cal{K}$ equipped with atlas $\{(U_{\lambda} \cap \cal{K}, \phi_{\lambda}\restriction_{K})\}_{\lambda \in \Lambda}$ is a $k$-manifold.
 \end{defn}
 
-We define the codimension of a submanifold, $\cal{K}$, of a manifold $\cal{M}$ as $n-k$. 
+If $\cal{K}$ is a submanifold of a manifold $\cal{M}$, we define its codimension as $n-k$. 
 \begin{example}
 $S^n$ is a codimension $1$ submanifold of $\bb{R}^{n+1}$.
 \end{example}
 
 \begin{defn}[Manifolds with boundary]
-A manifold where for some indices in $\Lambda' \subseteq \Lambda$, $\phi_{\lambda'}$ is a homeomorphism between $U_{\lambda'}$ and the upper half space, which is the subset of $\bb{R}^n$ with first coordinate nonnegative.
+The usual definition of a manifold, except that some neighbourhoods are permitted to be homeomorphic to the upper half space, $\bb{H}^n$, which is the subset of $\bb{R}^n$ with first coordinate nonnegative. 
 \end{defn}
 
-Define Boundary, Interior
 
-Mention the result she mentioned that boundary, interior are invariant regardless of coordinate chart chosen.
-Closed manifold Compact manifold, Open manifold, Simply Connected, Path connected, etc etc
+\begin{defn}[Boundary \& Interior]
+The boundary of a manifold $\cal{M}$ is denoted by $\partial \cal{M}$, and is defined as $\partial \cal{M} = \{x \in \cal{M}: x \in U_{\alpha} \Rightarrow U_{\alpha} \cong  \bb{H}^n\}$
+
+Similarly, the interior of a manifold $\cal{M}$ is denoted by $\In \cal{M}$, and is defined as $\partial \cal{M} = \{x \in \cal{M}: x \in U_{\alpha} \Rightarrow U_{\alpha} \cong  U \in \cal{T}_{\bb{R}^n}\}$
+\end{defn}
+\begin{prop}
+This notion is well defined, i.e. if for some point $x \in \cal{M}$, some open patch containing $x$ is homeomorphic to an open subset of $\bb{R}^n$, then any open patch containing $x$ is homeomorphic to an open subset of $\bb{R}^n$. 
+
+Similarly, if for some point $x \in \cal{M}$, some open patch containing $x$ is homeomorphic to $\bb{H}^n$ , then any open patch containing $x$ is homeomorphic to an open subset of $\bb{R}^n$. 
+
+\end{prop}
+\begin{proof}
+\ref{manifoldwboundary}
+\end{proof}
+
+%Mention the result she mentioned that boundary, interior are invariant regardless of coordinate chart chosen.
+%Closed manifold Compact manifold, Open manifold, Simply Connected, Path connected, etc etc
 
 \begin{defn}[Orientability]
-A manifold is orientable iff $H_n(\cal{M}, \bb{Z}) \cong \bb{Z}$
+A manifold is orientable iff $H_n(\cal{M}, \bb{Z}) \cong \bb{Z}$. 
+
 \end{defn}
 
 
-A manifold is orientable iff there can be defined a continuous normal vector field on it. 
+A manifold is orientable iff there can be defined a continuous normal vector field on it, when it is embedded in $\bb{R}^m$.
 
-An orientation is just a choice of generators.
+An orientation is just a choice of generator for its highest homology group.
 
-orientable if n is odd
 $2$-manifolds are called surfaces.
 
-$\sigma_{g, b}$ are orientable surfaces of genus $g$, and \# int $D^2$ removed is $b$. 
+$\Sigma_{g, b}$ are orientable surfaces of genus $g$, and \# int $D^2$ removed is $b$. 
 
-$\sigma_{0, 0}: S^2$.
-$\sigma_{0, 1}: D^2$.
-$\sigma_{0, 2}$: Annulus
-$\sigma_{0, 3} S^2$: Pair of pants
-$\sigma_{1, 0} T^2$.
+$\Sigma_{0, 0}: S^2$.
+
+$\Sigma_{0, 1}: D^2$.
+
+$\Sigma_{0, 2}$: Annulus
+
+$\Sigma_{0, 3} S^2$: Pair of pants
+
+$\Sigma_{1, 0} T^2$.
 
 Such manifolds are always compact, and have boundary for $g>0$.
 
@@ -182,4 +228,36 @@ Clearly $f$ is injective, and we denote it by $f: \cal{M} \hookrightarrow \cal{N
 \end{defn}
 
 Knot theory is the study of embeddings of $S^p$ in $S^n$ or $\bb{R}^n$, with $p< n$.
+
+\chapter{Exercises}
+
+\begin{prop}[$S^n$ is a manifold]
+\label{snmanifold}
+\end{prop}
+\begin{proof}
+By the stereographic projection, $\bb{R^n} \cong S^n \setminus (0, 0, \dots, 1)$, and by composing the stereographic projection with reflection in the $x_n$ plane, we get $\bb{R^n} \cong S^n \setminus (0, 0, \dots, -1)$.
+
+Hence, these two sets are an explicit example of a collection of surface patches for $S^n$, which proves it is a manifold.
+\end{proof}
+
+\begin{prop}[$\bb{RP}^n$ is a manifold]
+\label{rpnmanifold}
+\end{prop}
+\begin{proof}
+\textcolor{red}{To be done.}
+\end{proof}
+
+\begin{prop}[Product manifolds are well defined]
+\label{productmanifold}
+\end{prop}
+\begin{proof}
+\textcolor{red}{To be done.}
+\end{proof}
+
+\begin{prop}[The boundary of a manifold is well defined]
+\label{manifoldwboundary}
+\end{prop}
+\begin{proof}
+\textcolor{red}{To be done.}
+\end{proof}
 \end{document}
