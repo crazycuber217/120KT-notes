@@ -64,6 +64,10 @@
 \DeclareMathOperator{\Frac}{Frac}
 \newcommand{\pre}[1]{#1^{\textrm{pre}}}
 \newcommand{\ovl}[1]{\overline{#1}}
+\newcommand{\catname}[1]{{\normalfont\textbf{#1}}}
+\newcommand{\Top}{\catname{Top}}
+\newcommand{\Diff}{\catname{Diff}}
+\newcommand{\Pl}{\catname{PL}}
 
 %Algebra & Category Theory
 \DeclareMathOperator{\id}{id}
@@ -204,7 +208,7 @@ A manifold is orientable iff $H_n(\cal{M}, \bb{Z}) \cong \bb{Z}$.
 
 A manifold is orientable iff there can be defined a continuous normal vector field on it, when it is embedded in $\bb{R}^m$.
 
-An orientation is just a choice of generator for its highest homology group.
+An orientation is just a choice of generator for its highest homology group ($-1$ or $1$)
 
 $2$-manifolds are called surfaces.
 
@@ -228,6 +232,76 @@ Clearly $f$ is injective, and we denote it by $f: \cal{M} \hookrightarrow \cal{N
 \end{defn}
 
 Knot theory is the study of embeddings of $S^p$ in $S^n$ or $\bb{R}^n$, with $p< n$.
+
+\section{class 2}
+
+\begin{observation}
+Is every subset of a topological manifold a submanifold? No, for example consider two cones tip to tip as a subset of $\bb{R}^3$
+\end{observation}
+\begin{defn}[Compatible]
+Two atlases are said to be equivalent or compatible iff their union is also an atlas.
+\end{defn}
+
+\begin{defn}[Maximal atlas]
+The maximal atlas $\cal{U}$ of $\cal{M}$ associated to some atlas $\{(U_\lambda, \phi_{\lambda})\}_{\lambda \in \Lambda}$ is the union of all atlases equivalent to $\{(U_\lambda, \phi_{\lambda})\}_{\lambda \in \Lambda}$.
+\end{defn}
+
+For topological manifolds, the maximal atlas is unique, in the sense that for any charts indexed by $\alpha, \beta$, the maximal atlas associated with them is the same.
+
+
+
+\begin{defn}[$C^{\infty}$/Differentiable/Smooth-manifold]
+A topological manifold is smooth iff every transition map is smooth.
+\end{defn}
+\begin{defn}[Smooth structure]
+A smooth structure on $\cal{M}$ is the collection of all smoothly equivalent smooth atlases of $\cal{M}$.
+\end{defn}
+\begin{defn}[Diffeomorphism]
+A diffeomorphism between two smooth manifolds $\cal{M}$ and $\cal{N}$ is a homeomorphism, $f$ between them such that, such that $f$ and $f^{-1}$ (composed w respective homeomorphisms to $\bb{R}^n$) are $C^{\infty}$.
+\end{defn}
+
+\begin{defn}[Orientablity]
+A  $C^{\infty}$ manifold $\cal{M}$ is a orientable iff it has an atlas for which the Jacobian of all its transition maps at any point have positive determinant. 
+Note that if determinant is equal to $0$, then its inverse at that point won't be differentiable
+\end{defn}
+
+\begin{defn}[PL Category]
+Not
+\end{defn}
+
+We denote the category of all topological manifolds, with morphisms continuous maps, $\Top$.
+We denote the category of all differentiable manifolds, with morphisms smooth maps, $\Diff$.
+We denote the category of all PL manifolds, with morphisms PL maps, $\Pl$.
+
+In dimension $0, 1, 2, 3$, we have that $\Top \cong \Diff \cong \Pl$
+In dimension $4$, we have that $\Top \ncong \Pl \cong \DIff $
+In dimension $4$, we have that exist uncountably many inequivalent PL and hence smooth structures on $\bb{R}^4$. Existence of inequivalent smooth structures on $\bb{R}^4$ is the smooth Poincare conjecture, which is still open.
+In dimension $5, 6$, we have that $\Top \ncong \Pl \cong \DIff $
+In dimension $5, 6$, the smooth, and hence PL structure on $\bb{R}^n, \bb{S}^n$ is unique.
+In dimension $\geq 7$, we have that $\Top \ncong \Pl \cong \DIff \ncong \Top$
+There are 28 exotic smooth structures on $S^7$. 
+
+Now, we consider functors between categories of morphisms.
+
+There exists a functor from $\Diff$ to $\Pl$. 
+It is noninjective, $\exists \cal{M} \cong_{PL} S^7$ but $\cal{M} \ncong_{\diff} S^7$
+It is not surjective, $\exists M^10$ which is PL but admits no smooth structure.
+
+There exists a function from $\Pl$ to $\Top$.
+It is not surjective: $\exists E^8$ that does not admit a PL structure.
+It is not injective: Exotic $\bb{R}^4$.
+
+From now onwards, all manifolds and homeomorphisms are $PL$.
+\begin{defn}[Knot]
+A subset, $K$, of an $n$-manifold $X$ is a knot iff it is homeomorphic to $S^p$, $p<n$.
+\end{defn}
+
+\begin{defn}[Link]
+A subset $L$ of an $n$-manifold $X$ is a link iff it is homemorphic to a disjoint union of a finite number $S^{p_1}$'s, where each $p_i < n$
+\end{defn}
+
+We require these inequalities to be strict, because there's no embedding of $S^n$ into $\bb{R}^n$.
+
 
 \chapter{Exercises}
 
